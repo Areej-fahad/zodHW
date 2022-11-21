@@ -7,7 +7,7 @@ import{parkSchama, parkSchamatype} from "../schama/park.schama"
 let parkmang:parkSchamatype[]=[]
 
 router.get("/",(req,res)=> {
-return res.send(parkmang)
+return res.json(parkmang)
 })
 
 router.post('/', vildate(parkSchama), (req, res) => {
@@ -23,6 +23,7 @@ router.post('/', vildate(parkSchama), (req, res) => {
       return park.id !== id;
     });
     park_managupdated.push(park_manag_updated)
+    parkmang=park_managupdated // عند التغيير لازم اغير الاساس 
     return res.send({ message: "park ride  updated!" });
   })
 
