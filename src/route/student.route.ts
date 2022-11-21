@@ -33,7 +33,7 @@ router.post('/', vildate(stdentscama), (req, res) => {
       return students.id !== id;
     });
     studentupdate.push(student_update)
-    stdent=studentupdate // عند التغيير لازم اغير الاساس 
+    stdent=studentupdate  
     return res.send({ message: "student  updated!" });
   })
 
